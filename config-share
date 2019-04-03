@@ -1,0 +1,32 @@
+#!/bin/bash
+
+function print_usage() {
+    echo "--- usage:"
+    echo "--- config-share \"action\""
+    echo "------ \"action\" in { package, unpackage }"
+}
+
+function validate_input() {
+    if [ ! "$1" == "package" ] && [ ! "$1" == "unpackage" ]; then
+        echo "Invalid input."
+        print_usage
+        exit 1
+    else
+        ACTION="$1"
+    fi
+}
+
+function package() {
+    echo "Packaging.."
+}
+
+function main() {
+    validate_input "${@}"
+
+    case "${ACTION}":
+        "package":
+        "unpackage":
+    esac
+}
+
+main "${@}"
