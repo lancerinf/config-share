@@ -20,13 +20,26 @@ function package() {
     echo "Packaging.."
 }
 
+function unpackage() {
+    echo "Unpackaging.."
+}
+
 function main() {
     validate_input "${@}"
 
-    case "${ACTION}":
-        "package":
-        "unpackage":
+    case "${ACTION}" in
+        "package")
+            package
+            ;;
+        "unpackage")
+            unpackage
+            ;;
+        *)
+            echo "This should never be reached."
+            ;;
     esac
+
+    echo "Done."
 }
 
 main "${@}"
