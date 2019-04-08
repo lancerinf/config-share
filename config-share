@@ -1,45 +1,88 @@
 #!/bin/bash
 
+BASEDIR="$(dirname $0)"
+SHARE_LIST_FILE="${BASEDIR}/share-list.txt"
+TIMESTAMP="$(date '+%Y%m%d_%H%M%S')"
+
 function print_usage() {
-    echo "--- usage:"
-    echo "--- config-share \"action\""
-    echo "------ \"action\" in { package, unpackage }"
+  echo "--- usage:"
+  echo "--- config-share \"action\""
+  echo "------ \"action\" in { package, unpackage }"
 }
 
 function validate_input() {
-    if [ ! "$1" == "package" ] && [ ! "$1" == "unpackage" ]; then
-        echo "Invalid input."
-        print_usage
-        exit 1
+  if [ "$1" == "package" ]; then
+    ACTION="$1"
+  elif [ "$1" == "unpackage" ] && [ -f "$2" ]; then
+    ACTION="$1"
+    PATH_TO_PACKAGE="$2"
+  else
+    echo "Invalid input."
+    print_usage
+    exit 1
+  fi
+}
+
+function copy_shareables_to_temp_dir() {
+  while read line; do
+    if [ -d "${line}" ]; then
+      mkdir -p "$(dirname "${TEMP_FOLDER}${line}")"
+      cp -r "${line}" "${TEMP_FOLDER}${line}"
+      echo "- Directory found: ${line}"
+    elif [ -f "${line}" ]; then
+      mkdir -p "$(dirname "${TEMP_FOLDER}${line}")"
+      cp "${line}" "${TEMP_FOLDER}${line}"
+      echo "- File found: ${line}"
     else
-        ACTION="$1"
+      echo "-- I can't find: ${line}"
     fi
+  done < <(cat "${SHARE_LIST_FILE}" | grep -v '#' | grep -v '^$')
 }
 
 function package() {
-    echo "Packaging.."
+  echo "Packaging.."
+  TEMP_FOLDER="$(mktemp -d)"
+  PACKAGE_NAME="package_${TIMESTAMP}.tgz"
+
+  echo "Setting up temporary workin directory: ${TEMP_FOLDER}"
+
+  copy_shareables_to_temp_dir
+  tar -C "${TEMP_FOLDER}" -cvzf "./${PACKAGE_NAME}" "."
+
+  echo "Removing temporary working directory"
+  rm -r "$TEMP_FOLDER"
 }
 
 function unpackage() {
-    echo "Unpackaging.."
+  echo "Unpackaging ${PATH_TO_PACKAGE}.."
+
+  EXTRACTION_RESULTS="$(mktemp)"
+  tar -C / -xvzf "${PATH_TO_PACKAGE}" 2>"${EXTRACTION_RESULTS}"
+
+  if [ ! "$?" == 0 ] && [[ ! "$(cat ${EXTRACTION_RESULTS})" =~ "Cannot utime: Operation not permitted" ]]; then
+    echo "Something went wrong while extracting your files:"
+    cat "${EXTRACTION_RESULTS}"
+  fi
+
+  rm "${EXTRACTION_RESULTS}"
 }
 
 function main() {
-    validate_input "${@}"
+  validate_input "${@}"
 
-    case "${ACTION}" in
-        "package")
-            package
-            ;;
-        "unpackage")
-            unpackage
-            ;;
-        *)
-            echo "This should never be reached."
-            ;;
-    esac
+  case "${ACTION}" in
+  "package")
+    package
+    ;;
+  "unpackage")
+    unpackage
+    ;;
+  *)
+    echo "This should never be reached."
+    ;;
+  esac
 
-    echo "Done."
+  echo "Done."
 }
 
 main "${@}"
