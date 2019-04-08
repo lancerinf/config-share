@@ -1,5 +1,8 @@
 #!/bin/bash
 
+BASEDIR="$(dirname $0)"
+SHARE_LIST_FILE="${BASEDIR}/share-list.txt"
+
 function print_usage() {
     echo "--- usage:"
     echo "--- config-share \"action\""
@@ -16,8 +19,18 @@ function validate_input() {
     fi
 }
 
+function cycle_through_share_list() {
+    while read line
+
+    done < <( cat "${SHARE_LIST_FILE}" | grep -v '#' | grep -v '^$' )
+}
+
 function package() {
     echo "Packaging.."
+
+    
+
+
 }
 
 function unpackage() {
