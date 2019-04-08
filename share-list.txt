@@ -3,9 +3,9 @@
 #
 # Entries in this file will be in the following format:
 #
-# ${HOME}/.gitglobal
-# ${HOME}/.local/bin/my_bin
+# /home/user/.gitglobal
+# /home/user/.local/bin/my_bin
 #
 ###
 
-${HOME}/.gitglobal
+/home/user/.vscode
