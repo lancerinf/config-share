@@ -8,4 +8,26 @@
 #
 ###
 
-/home/user/.vscode
+/home/fede/.ssh/config
+
+/home/fede/.gitconfig
+/home/fede/.gitignore_global
+
+/home/fede/Workspace/repos/.gitconfig
+/home/fede/Workspace/sch-repos/.gitconfig
+
+/home/fede/.vimrc
+/home/fede/.config/Code/User/keybindings.json
+/home/fede/.config/Code/User/settings.json
+
+/home/fede/.local/bin/cf-test
+
+/home/fede/.aws/config
+/home/fede/.aws/credentials
+
+/home/fede/.local/bin/ovpn-sch
+/home/fede/Documents/Schibsted/Heimdall/heimdall-latest.ovpn
+/home/fede/Documents/Schibsted/Heimdall/username.txt
+
+/home/fede/.local/bin/mfa
+/home/fede/Workspace/repos/bash-mfa/tokenfiles
