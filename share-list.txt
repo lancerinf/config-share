@@ -28,6 +28,9 @@
 /home/fede/.local/bin/ovpn-sch
 /home/fede/Documents/Schibsted/Heimdall/heimdall-latest.ovpn
 /home/fede/Documents/Schibsted/Heimdall/username.txt
+/home/fede/Documents/Schibsted/SSHKeys
 
 /home/fede/.local/bin/mfa
 /home/fede/Workspace/repos/bash-mfa/tokenfiles
+
+/home/fede/.local/bin/config-share

@@ -50,7 +50,7 @@ function package() {
   tar -C "${TEMP_FOLDER}" -cvzf "./${PACKAGE_NAME}" "."
 
   echo "Removing temporary working directory"
-  rm -r "$TEMP_FOLDER"
+  rm -rf "$TEMP_FOLDER"
 }
 
 function unpackage() {
