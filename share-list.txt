@@ -8,6 +8,8 @@
 #
 ###
 
+/home/fede/.bashrc
+
 /home/fede/.ssh/config
 
 /home/fede/.gitconfig
