@@ -5,7 +5,7 @@
 
 # System utilities
 sudo dnf install -y oathtool xclip
-sudo dnf install -y vim code
+sudo dnf install -y vim code tig
 
 # AWS cli Setup
 pip3 install --user awscli cfn_flip
