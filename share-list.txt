@@ -33,6 +33,8 @@
 /home/fede/Documents/Schibsted/SSHKeys
 
 /home/fede/.local/bin/mfa
+/home/fede/.local/bin/encrypt
+/home/fede/.local/bin/decrypt
 /home/fede/Workspace/repos/bash-mfa/tokenfiles
 
 /home/fede/.local/bin/config-share
