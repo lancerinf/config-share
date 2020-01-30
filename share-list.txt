@@ -8,33 +8,57 @@
 #
 ###
 
+# Bash Utils
 /home/fede/.bashrc
 
+# SSH
 /home/fede/.ssh/config
+/home/fede/.ssh/ads.dev.pem
+/home/fede/.ssh/ads.pre.pem
+/home/fede/.ssh/ads.pro.pem
+/home/fede/.ssh/keypair_aboutme_dev
+/home/fede/.ssh/keypair_dataanalytics_dev
+/home/fede/.ssh/keypair_pulse_devops_dev
+/home/fede/.ssh/keypair_pulse_devops_pro
+/home/fede/.ssh/keypair_pulse_devops_pre
+/home/fede/.ssh/keypair_broker_dev
+/home/fede/.ssh/keypair_broker_pre
+/home/fede/.ssh/keypair_dataanalytics_pro
+/home/fede/.ssh/keypair_dataanalytics_pre
+/home/fede/.ssh/keypair_broker_pro
 
+# Git
 /home/fede/.gitconfig
 /home/fede/.gitignore_global
-
 /home/fede/Workspace/repos/.gitconfig
 /home/fede/Workspace/sch-repos/.gitconfig
 
+# Editors setup
 /home/fede/.vimrc
 /home/fede/.config/Code/User/keybindings.json
 /home/fede/.config/Code/User/settings.json
 
-/home/fede/.local/bin/cf-test
-
+# AWS profiles
 /home/fede/.aws/config
 /home/fede/.aws/credentials
 
+# K8s cluster config
+/home/fede/.kube/ate-dev-unstable.config
+/home/fede/.kube/ate-dev-stable-v1.config
+/home/fede/.kube/ate-pre-stable-v1.config
+/home/fede/.kube/ate-pro-stable-v1.config
+
+# VPN
 /home/fede/.local/bin/ovpn-sch
 /home/fede/Documents/Schibsted/Heimdall/heimdall-latest.ovpn
 /home/fede/Documents/Schibsted/Heimdall/username.txt
-/home/fede/Documents/Schibsted/SSHKeys
 
+# Mix Utils
+/home/fede/.local/bin/cf-test
+/home/fede/.local/bin/config-share
 /home/fede/.local/bin/mfa
 /home/fede/.local/bin/encrypt
 /home/fede/.local/bin/decrypt
+
 /home/fede/Workspace/repos/bash-mfa/tokenfiles
 
-/home/fede/.local/bin/config-share
