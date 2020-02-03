@@ -1,10 +1,10 @@
-# OS-config-sync
+# Config-Share
 
-This is a small utility I made to simplify my life when setting up a new machine.
+This is a small utility I made to simplify my life when setting up a new machine from scratch or after an OS re-install.
 
-In my experience, reinstalling the OS (typically Linux) on a new laptop/desktop takes X amount of time, then getting this new host productive, takes another X amount of time, because a whole set of small utilities scripts, access keys and such, need to be put in place in this new machine.
+Getting productive on a new machine requires more than just the time to set up the OS of choice. What oftentimes ends up taking longer is to put in place a whole series of config files, utilities and secrets. It's also the norm that you forget to set something up on the new host, until you actually need it.
 
-One thing I had wished for, was a convenient and safe way to port all of these from one system to another automatically.
+One thing I always wished for, was a convenient and safe way to port all of these from one system to another.
 Something that would sync a few key files across two computers.
 
 That's why I've made `config-share`.
