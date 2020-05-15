@@ -37,6 +37,7 @@
 /home/fede/.vimrc
 /home/fede/.config/Code/User/keybindings.json
 /home/fede/.config/Code/User/settings.json
+/home/fede/.editorconfig
 
 # AWS profiles
 /home/fede/.aws/config
