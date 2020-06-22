@@ -43,17 +43,6 @@
 /home/fede/.aws/config
 /home/fede/.aws/credentials
 
-# K8s cluster config
-/home/fede/.kube/ate-dev-unstable.config
-/home/fede/.kube/ate-dev-stable-v1.config
-/home/fede/.kube/ate-pre-stable-v1.config
-/home/fede/.kube/ate-pro-stable-v1.config
-
-# VPN
-/home/fede/.local/bin/ovpn-sch
-/home/fede/Documents/Schibsted/Heimdall/heimdall-latest.ovpn
-/home/fede/Documents/Schibsted/Heimdall/username.txt
-
 # Mix Utils
 /home/fede/.local/bin/cf-test
 /home/fede/.local/bin/config-share
