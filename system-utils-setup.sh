@@ -3,6 +3,16 @@
 # Extra things to install
 ###
 
+# Gnome disable workspace related shortcuts
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left []
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left []
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down []
+
 # System utilities
 sudo dnf install -y oathtool xclip
 sudo dnf install -y vim code tig
@@ -22,11 +32,7 @@ rm -r ~/Templates
 
 # Setup personal repos folder
 mkdir -p ~/Workspace/repos
-pushd ~/Workspace/repos
-GIT_SSL_NO_VERIFY=true git clone git@gitlab.com:federico.lancerin/bash-mfa.git
-GIT_SSL_NO_VERIFY=true git clone git@gitlab.com:federico.lancerin/linuxTricks.git
-GIT_SSL_NO_VERIFY=true git clone git@gitlab.com:federico.lancerin/curriculum.git
-popd
 
 # Setup work repos folder
 mkdir -p ~/Workspace/sch-repos
+
