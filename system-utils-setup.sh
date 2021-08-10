@@ -14,11 +14,14 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left []
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down []
 
 # System utilities
-sudo dnf install -y oathtool xclip
-sudo dnf install -y vim code tig
+# sudo dnf install -y oathtool xclip
+# sudo dnf install -y vim code tig
+
+sudo apt install oathtool xclip gawk vim tig net-tools python3-pip python3-venv
+
 
 # AWS cli Setup
-pip3 install --user awscli cfn_flip
+sudo pip3 install awscli cfn_flip aws-sam-cli
 
 # Install build tools to make Travis CLI
 # sudo dnf install @development-tools
